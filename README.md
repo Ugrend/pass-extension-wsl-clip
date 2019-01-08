@@ -21,7 +21,7 @@ or
 
 - Place psclip.bash in ```/usr/lib/password-store/extensions```
 
-##Assumtions
+## Assumptions
 This script assumed Windows is installed on C:\  
 If you have windows installed on another drive you can set the location of powershell via  
 ```export POWERSHELL_EXE_LOCATION=/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe``` (change as needed)
