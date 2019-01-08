@@ -4,7 +4,7 @@ clip() {
         local sleep_argv0="password store sleep on display $DISPLAY"
         pkill -f "^$sleep_argv0" 2>/dev/null && sleep 0.5
         local before="$(${POWERSHELL_EXE_LOCATION} Get-Clipboard 2>/dev/null | base64)"
-        ${POWERSHELL_EXE_LOCATION} Set-Clipboard -Value ${1}  || die "Error: Could not copy data to the clipboard"
+        ${POWERSHELL_EXE_LOCATION} Set-Clipboard -Value \""${1//\"/\"\"}"\"  || die "Error: Could not copy data to the clipboard"
         (
                 ( exec -a "$sleep_argv0" sleep "$CLIP_TIME" )
                 local now="$(${POWERSHELL_EXE_LOCATION} Get-Clipboard | base64)"
